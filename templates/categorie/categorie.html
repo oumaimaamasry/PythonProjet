@@ -1,0 +1,130 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+ <!--
+<style>
+  body{
+    background-image: url("{% static 'images/img_3.png' %}");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%
+  }
+</style>-->
+
+<div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+  <a class="btn btn-outline-success me-md-2" type="button" href="{% url 'materiel:afficher_materiel' %}" >Tout le materiel</a>
+
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<div>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</div>
+<!--
+<div class="dropdown">
+  <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Catégorie
+  </button>
+  <ul class="dropdown-menu">
+      {% for c in Categorie %}
+    <li><a class="dropdown-item" type="button" href="../../sous_categorie/sous_categorie?id={{ c.id }}"> {{c.Categorie}}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<div class="dropdown">
+  <button class="btn btn-outline-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Modifier catégorie
+  </button>
+  <ul class="dropdown-menu">
+      {% for c in Categorie %}
+    <li><a class="dropdown-item" type="button" href="{% url 'categorie:modifier_categorie'  c.id %}"> {{c.Categorie}}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<div class="dropdown">
+  <button class="btn btn-outline-danger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Supprimer catégorie
+  </button>
+  <ul class="dropdown-menu">
+      {% for c in Categorie %}
+    <li><a class="dropdown-item" type="button" href="{% url 'categorie:supprimer_categorie'  c.id %}"> {{c.Categorie}}</a></li>
+      {% endfor %}
+  </ul>
+</div>
+
+    {% for s in Souscat %}
+    <li><a class="dropdown-item" type="button" href="{% url 'sous_categorie:modifier_souscategorie' s.id %}">  {{ s.Nom }}</a></li>
+    {% endfor %}
+-->
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<!-- Example single danger button -->
+<center>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <!--
+  <div class="btn-group">
+  <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    Ajouter
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" type="button" href="../ajouter_categorie"> Ajouter catégorie</a></li>
+        <li><a class="dropdown-item" type="button" href="{% url 'sous_categorie:ajouter_sous' %}"> Ajouter type de matériel</a></li>
+    <li><a class="dropdown-item" type="button" href="{% url 'materiel:ajouter_materiel' %}"> Ajouter matériel</a></li>
+  </ul>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</div>-->
+<div class="btn-group">
+  <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    catégorie
+  </button>
+  <ul class="dropdown-menu">
+    {% for c in Categorie %}
+    <li><a class="dropdown-item" href="../../sous_categorie/sous_categorie?id={{ c.id }}">{{c.Categorie}}</a></li>
+     {% endfor %}
+  </ul>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</div>
+    <div class="btn-group">
+  <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    Ajouter
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" type="button" href="../ajouter_categorie"> Ajouter catégorie</a></li>
+        <li><a class="dropdown-item" type="button" href="{% url 'sous_categorie:ajouter_sous' %}"> Ajouter type de matériel</a></li>
+    <li><a class="dropdown-item" type="button" href="{% url 'materiel:ajouter_materiel' %}"> Ajouter matériel</a></li>
+  </ul>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</div>
+
+  <div class="btn-group">
+  <button type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    Modifier catégorie
+  </button>
+  <ul class="dropdown-menu">
+     {% for c in Categorie %}
+    <li><a class="dropdown-item" href="{% url 'categorie:modifier_categorie'  c.id %}">{{c.Categorie}}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <div class="btn-group">
+  <button type="button" class="btn btn-outline-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    Supprimer catégorie
+  </button>
+  <ul class="dropdown-menu">
+    {% for c in Categorie %}
+    <li><a class="dropdown-item" href="{% url 'categorie:supprimer_categorie'  c.id %}">{{c.Categorie}}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+</center>
+</div>
+ <!-- <a href="{% url 'sous_categorie:afficher_souscategorie'%}"> afficher type mat</a>-->
+{% endblock content %}
+

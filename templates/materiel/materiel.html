@@ -1,0 +1,47 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+
+<hr>
+&nbsp;&nbsp;
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+  <a class="btn btn-success me-md-2" type="button" href="../materiel/ajouter_materiel" >Ajouter un materiel</a>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<div class="col-md">
+		<div class="card card-body">
+                <table class="table table-success table-striped">
+  <thead>
+    <th>Type matériel</th>
+                        <th>Numéro inventaire</th>
+                        <th>Numéro serie</th>
+                        <th>Marque</th>
+                         <th>Model</th>
+                        <th>Etat</th>
+                        <th>Datee d'acquisition</th>
+  <th>Mettre à jour</th>
+  <th>Supprimer</th><th>Détails</th>
+  </thead>
+  <tbody>
+     {% for m in liste_mat %}
+          <td> {{ m.Type }}</td>
+           <td>{{ m.Numero_inventaire }}</td>
+           <td>{{ m.Numero_serie }}</td>
+           <td>{{ m.Marque }}</td>
+           <td>{{ m.Model }}</td>
+           <td>{{ m.Etat}}</td>
+           <td>{{ m.Date_acquisition }}</td>
+     <td><a type="button" class="btn btn-primary" href="{% url 'materiel:modifier_materiel' m.id %}">Mettre à jour</a></td>
+     <td><a type="button" class="btn btn-danger" href="{% url 'materiel:supprimer_materiel'  m.id %}">Supprimer</a></td>
+     <td><button type="button" class="btn btn-success" href="">Détails</button></td>
+     </tbody>
+
+        {% endfor %}
+
+</table>
+       </div>
+</div>
+{% endblock content%}
+
+

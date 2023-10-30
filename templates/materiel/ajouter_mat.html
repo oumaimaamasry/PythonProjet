@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<form action="" method="post" xmlns="http://www.w3.org/1999/html">
+
+    {% csrf_token %}
+    {{form}}
+    la forme de la date : (aaaa-aa-aa)
+    <input type="submit" name="Enregistrer">
+</form>
+{% endblock content%}

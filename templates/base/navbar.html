@@ -1,0 +1,39 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+   <img src="{% static 'images/parc info.jpg' %}" width="250" height="70">
+   <!-- <a class="navbar-brand" href="#">Parc informatique</a>-->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class=" btn btn-outline-secondary " aria-current="page" href="../../categorie/categorie">Acceuil</a>
+        </li>
+         <!-- <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+  <a class="btn btn-outline-secondary me-md-2" type="button" href="{% url 'materiel:afficher_materiel' %}" >Tout le materiel</a>
+</div>-->
+          <div class="dropdown">
+  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Consulter materiel
+  </button>
+  <ul class="dropdown-menu">
+      {% for s in Sous_cat %}
+    <li><a class="dropdown-item" type="button" href="../../materiel/materiel?id={{ s.id }}"> {{ s.Nom }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+      </ul>
+
+
+    <!-- -->
+      </div>
+  </div>
+     <form class="d-flex" role="search" method="get">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+       <!--  {{ myFilter.form}}-->
+      </form>
+</nav>

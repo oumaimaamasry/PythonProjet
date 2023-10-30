@@ -1,0 +1,81 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+&nbsp;&nbsp;&nbsp;
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+  <a class="btn btn-outline-success me-md-2" type="button" href="{% url 'sous_categorie:ajouter_sous' %}" >Ajouter type materiel</a>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<!--
+<div class="dropdown">
+  <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Type de matériel
+  </button>
+  <ul class="dropdown-menu">
+      {% for s in liste_souscat %}
+    <li><a class="dropdown-item" type="button" href="../../materiel/materiel?id={{ s.id }}"> {{ s.Nom }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<div class="dropdown">
+  <button class="btn btn-outline-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Modifier type matériel
+  </button>
+  <ul class="dropdown-menu">
+      {% for s in liste_souscat %}
+    <li><a class="dropdown-item" type="button" href="{% url 'sous_categorie:modifier_souscategorie'  s.id %}">  {{ s.Nom }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<div class="dropdown">
+  <button class="btn btn-outline-danger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Supprimer type matériel
+  </button>
+  <ul class="dropdown-menu">
+      {% for s in liste_souscat %}
+    <li><a class="dropdown-item" type="button" href="{% url 'sous_categorie:supprimer_souscategorie'  s.id %}">  {{ s.Nom }}</a></li>
+      {% endfor %}
+  </ul>
+</div>
+-->
+<center>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+<div class="btn-group">
+  <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    Type matériel
+  </button>
+  <ul class="dropdown-menu">
+    {% for s in liste_souscat %}
+    <li><a class="dropdown-item" type="button" href="../../materiel/materiel?id={{ s.id }}"> {{ s.Nom }}</a></li>
+    {% endfor %}
+  </ul>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</div>
+  <div class="btn-group">
+  <button type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    Modifier type matériel
+  </button>
+  <ul class="dropdown-menu">
+     {% for s in liste_souscat %}
+    <li><a class="dropdown-item" type="button" href="{% url 'sous_categorie:modifier_souscategorie'  s.id %}">  {{ s.Nom }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <div class="btn-group">
+  <button type="button" class="btn btn-outline-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    Supprimer type matériel
+  </button>
+  <ul class="dropdown-menu">
+   {% for s in liste_souscat %}
+    <li><a class="dropdown-item" type="button" href="{% url 'sous_categorie:supprimer_souscategorie'  s.id %}">  {{ s.Nom }}</a></li>
+      {% endfor %}
+  </ul>
+</div>
+</center>
+{% endblock content%}
